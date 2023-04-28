@@ -1,0 +1,44 @@
+﻿@model Core_Proje.Areas.Writer.Models.UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Profil Bilgilerini Duzenle</h4>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputName1">Adiniz</label>
+                    <input type="text" asp-for="Name" class="form-control" id="exampleInputName1" placeholder="Ad">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Soyadiniz</label>
+                    <input type="text" asp-for="Surname" class="form-control" id="exampleInputName1" placeholder="Soyad">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Sifreniz</label>
+                    <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Sifre">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Sifrenizi Onaylayin</label>
+                    <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Sifrenizi Onaylayin">
+                </div>
+                <div class="form-group">
+                    <label>Fotograf Sec</label>
+                    <input type="file" asp-for="Picture" >
+                    @*<div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Fotograf Yukle">
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-primary" type="button">Yukle</button>
+                        </span>
+                    </div>*@
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Degisiklikleri Kaydet</button>
+                <button class="btn btn-light">Iptal</button>
+            </form>
+        </div>
+    </div>
+</div>
+
