@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
+
     public class WriterMessageManager : IWriterMessageService
     {
         IWriterMessageDal _writerMessageDal;
@@ -34,6 +35,16 @@ namespace BusinessLayer.Concrete
         }
 
         public List<WriterMessage> TGetList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<WriterMessage> TGetListbyFilter(string p)
+        {
+            return _writerMessageDal.GetByFilter(x => x.Receiver == p);
+        }
+
+        public List<WriterMessage> TGetListbyFilter()
         {
             throw new NotImplementedException();
         }
