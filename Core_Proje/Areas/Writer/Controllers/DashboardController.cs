@@ -30,9 +30,9 @@ namespace Core_Proje.Areas.Writer.Controllers
             ViewBag.v5 = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
 
             Context c = new Context();
-            ViewBag.v1 = 0; 
+            ViewBag.v1 = c.WriterMessages.Where(x => x.Receiver == values.Email).Count();
             ViewBag.v2 = c.announcements.Count();
-            ViewBag.v3 = 0;
+            ViewBag.v3 = c.Users.Count();
             ViewBag.v4 = c.Skills.Count();
             return View();
         }
